@@ -1,17 +1,31 @@
 .userCard {
   margin-bottom: 20px;
-  width: 100px;
+  width: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  cursor: pointer;
   &__avatar {
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color: bisque;
     margin-bottom: 7px;
+    box-shadow: 0 0 10px rgba(131,169,255,1);
+    transition: 0.3s;
+    &:hover {
+      transition: 0.3s;
+      box-shadow: 0 0 25px 5px rgba(131,169,255,1);
+    }
   }
   &__username {
+    margin: 10px 0 5px;
     text-decoration: underline;
+    font-weight: bold;
   }
+  &__name {
+  }
+}
+.active {
+  box-shadow: 0 0 25px 5px rgba(131,169,255,1);
 }

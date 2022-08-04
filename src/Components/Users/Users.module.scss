@@ -1,6 +1,32 @@
+.wrapper {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 20px;
+  border-bottom: 1px solid gray;
+}
 .users {
-  margin: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 15px;
   justify-items: center;
+  @media (width < 900px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @media (width < 720px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 20px;
+  }
+  &__arrow {
+    transform: rotate(180deg);
+    margin-bottom: 10px;
+  }
 }

@@ -1,23 +1,31 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Header from "./Components/Header/Header";
 import Users from "./Components/Users/Users";
-import { getUsers } from "./redux/slices/usersSlice";
+import { changeActiveUser, fetchUsers } from "./redux/slices/userSlice/usersSlice";
 import { useAppDispatch } from "./redux/store";
-import { serviceApi } from "./api/serviceApi";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 const App = () => {
 	const dispatch = useAppDispatch()
+	const usersArray = useSelector((state: RootState) => state.usersSlice.users)
+	const activeUser = useSelector((state: RootState) => state.usersSlice.activeUser)
+	const clickOnAvatar = (id: number) => dispatch(changeActiveUser(id))
+
 	useEffect(() => {
-		serviceApi.getUsers()
-			.then(data => dispatch(getUsers(data)))
-	}, [dispatch])
-	const email = 'email'
-	const username = 'username'
+		setTimeout(() => {
+			dispatch(fetchUsers())
+		}, 1500)
+	}, [ dispatch ])
+
 	return (
 		<div>
 			<Header/>
 			<div className="app">
-				<Users email={email} username={username}/>
+				{usersArray
+					? <Users usersArray={usersArray} activeUser={activeUser} clickOnAvatar={clickOnAvatar}/>
+					: 'Идет загрузка'
+				}
 			</div>
 		</div>
 	)

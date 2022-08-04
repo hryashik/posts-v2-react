@@ -1,0 +1,36 @@
+import { createSlice, PayloadAction, } from '@reduxjs/toolkit'
+import { serviceApi } from "../../../api/serviceApi";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { UserFetchType } from "./types";
+
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+	return await serviceApi.getUsers()
+})
+
+type InitialStateType = {
+	users: UserFetchType[] | null
+	activeUser: number | null
+}
+const initialState: InitialStateType = {
+	users: null,
+	activeUser: null
+}
+
+const usersSlice = createSlice({
+	name: 'usersSlice',
+	initialState,
+	reducers: {
+		changeActiveUser(state, action: PayloadAction<number>) {
+			state.activeUser = action.payload
+		}
+	},
+	extraReducers: (builder) => {
+		builder.addCase(fetchUsers.fulfilled, (state, action) => {
+			state.users = action.payload
+		})
+	},
+})
+
+export const {changeActiveUser} = usersSlice.actions
+export default usersSlice.reducer
+

@@ -2,13 +2,19 @@ import React from "react";
 import style from './User.module.scss'
 import {UserType} from "../../@types/types";
 
-
-const User: React.FC<UserType> = ({username, email}) => {
+const User: React.FC<UserType> = ({username, name, id, activeUser, clickOnAvatar}) => {
+	function calcStyle() {
+		if (activeUser === id) {
+			return `${style.userCard__avatar} + ${style.active}`
+		} else {
+			return style.userCard__avatar
+		}
+	}
 	return (
 		<div className={style.userCard}>
-			<div className={style.userCard__avatar}></div>
+			<div onClick={() => clickOnAvatar(id)} className={calcStyle()}></div>
 			<p className={style.userCard__username}>{username}</p>
-			<p>{email}</p>
+			<p className={style.userCard__name}>{name}</p>
 		</div>
 	)
 }
