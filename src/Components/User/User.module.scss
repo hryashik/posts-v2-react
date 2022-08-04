@@ -1,0 +1,17 @@
+.userCard {
+  margin-bottom: 20px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: bisque;
+    margin-bottom: 7px;
+  }
+  &__username {
+    text-decoration: underline;
+  }
+}

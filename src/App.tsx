@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import Header from "./Components/Header/Header";
+import Users from "./Components/Users/Users";
+import { getUsers } from "./redux/slices/usersSlice";
+import { useAppDispatch } from "./redux/store";
+import { serviceApi } from "./api/serviceApi";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	const dispatch = useAppDispatch()
+	useEffect(() => {
+		serviceApi.getUsers()
+			.then(data => dispatch(getUsers(data)))
+	}, [dispatch])
+	const email = 'email'
+	const username = 'username'
+	return (
+		<div>
+			<Header/>
+			<div className="app">
+				<Users email={email} username={username}/>
+			</div>
+		</div>
+	)
 }
 
 export default App;
