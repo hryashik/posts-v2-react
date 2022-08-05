@@ -1,0 +1,39 @@
+.wrapper {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  justify-items: center;
+  background-color: ghostwhite;
+  border-radius: 50px;
+}
+
+.avatar img {
+  height: 270px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    margin-bottom: 8px;
+  }
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 35px;
+    margin-top: 10px;
+    transform: rotate(90deg);
+  }
+  p {
+    font-size: 20px;
+  }
+}

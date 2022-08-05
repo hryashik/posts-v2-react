@@ -9,13 +9,19 @@
   &__avatar {
     width: 75px;
     height: 75px;
+    object-fit: cover;
     border-radius: 50%;
+    border: 3px solid white;
     margin-bottom: 7px;
     box-shadow: 0 0 10px rgba(131,169,255,1);
     transition: 0.3s;
     &:hover {
       transition: 0.3s;
       box-shadow: 0 0 25px 5px rgba(131,169,255,1);
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: translateY(15px);
     }
   }
   &__username {

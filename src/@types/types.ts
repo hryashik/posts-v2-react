@@ -6,6 +6,7 @@ export type UserType = {
 	id: number,
 	activeUser: number | null
 	clickOnAvatar: (id: number) => void
+	avatar?: string
 }
 
 export type IUsers = {

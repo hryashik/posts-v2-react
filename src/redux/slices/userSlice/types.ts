@@ -1,4 +1,5 @@
 export type UserFetchType = {
+	avatar?: string
 	id: number
 	name: string,
 	username: string,

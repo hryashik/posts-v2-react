@@ -2,6 +2,7 @@ import { createSlice, PayloadAction, } from '@reduxjs/toolkit'
 import { serviceApi } from "../../../api/serviceApi";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { UserFetchType } from "./types";
+import { avatars } from "../../../assets/avatars";
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
 	return await serviceApi.getUsers()
@@ -26,7 +27,9 @@ const usersSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchUsers.fulfilled, (state, action) => {
-			state.users = action.payload
+			const users = action.payload
+			users.forEach(elem => elem.avatar = avatars[elem.id - 1])
+			state.users = users;
 		})
 	},
 })

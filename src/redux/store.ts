@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 const store = configureStore({
 	reducer: {
-		usersSlice
+		usersSlice,
 	},
 })
 export type RootState = ReturnType<typeof store.getState>
