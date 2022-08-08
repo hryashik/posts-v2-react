@@ -1,7 +1,7 @@
 export const avatars = [
    'https://i.pinimg.com/originals/b0/4b/f0/b04bf0df9f7b3dc23fd5ccdc1c1fc05a.png',
    'https://p.favim.com/orig/2018/10/25/sad-avatar-satan-Favim.com-6497715.jpg',
-   'https://img.freepik.com/premium-vector/anime-manga-avatar-schoolgirl_146706-381.jpg',
+   'https://p1-tt-ipv6.byteimg.com/origin/pgc-image/a3ec92f3416c48e8940bf6b2957633d4.jpg',
    'https://392487-1235155-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2017/06/prison-school-review-3.png',
    'http://pm1.narvii.com/6628/1f9944849e83675ed7b02a79455bf30ac0dff0a4_00.jpg',
    'https://i.pinimg.com/236x/cf/c1/af/cfc1af3b5ab61b8da0065d0dace258cf.jpg',
