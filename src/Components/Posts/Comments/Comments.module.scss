@@ -1,0 +1,22 @@
+.comments {
+  width: 700px;
+  height: 100%;
+  margin-top: 15px;
+  padding: 15px 15px 5px;
+  position: relative;
+  left: 60px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top: 1px solid black;
+  background: ghostwhite;
+  animation-duration: 0.75s;
+  animation-name: slideIn;
+  @keyframes slideIn {
+    from {
+      left: 1500px;
+    }
+    to {
+      left: 60px
+    }
+  }
+}

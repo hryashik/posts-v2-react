@@ -3,6 +3,8 @@ import { serviceApi } from "../../../api/serviceApi";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { UserFetchType } from "./types";
 import { avatars } from "../../../assets/avatars";
+import { PostType } from "../../../Components/Posts/types";
+import { RootState } from "../../store";
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
 	return await serviceApi.getUsers()
@@ -23,7 +25,7 @@ const usersSlice = createSlice({
 	reducers: {
 		changeActiveUser(state, action: PayloadAction<number>) {
 			state.activeUser = action.payload
-		}
+		},
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchUsers.fulfilled, (state, action) => {
@@ -34,6 +36,6 @@ const usersSlice = createSlice({
 	},
 })
 
-export const {changeActiveUser} = usersSlice.actions
+export const { changeActiveUser } = usersSlice.actions
 export default usersSlice.reducer
 
