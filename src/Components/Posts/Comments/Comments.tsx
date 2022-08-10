@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import style from './Comments.module.scss'
 import { CommentType } from "../types";
 import Comment from "./Comment/Comment";

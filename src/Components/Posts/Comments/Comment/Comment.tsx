@@ -1,6 +1,6 @@
 import { CommentType } from "../../types";
 import style from './Comment.module.scss'
-import React from "react";
+import React, { useEffect } from "react";
 
 
 const Comment: React.FC<CommentType> = (props) => {
